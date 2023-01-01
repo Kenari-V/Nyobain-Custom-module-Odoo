@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="pengunjung_code_sequence_name" model="ir.sequence">
+        <field name="name">No Visitor</field>
+        <field name="code">pengunjung.profile</field>
+        <field name="prefix">VS</field>
+        <field name="number_increment" eval="1"></field>
+    </record>
+
+</odoo>

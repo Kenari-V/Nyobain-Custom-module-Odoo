@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <data noupdate="1"> 
+       <record id="pengunjung_email_template" model="mail.template">
+        <field name="name">Data: Send by email</field>
+        <field name="model_id" ref="latihan_custom_Module.model_pengunjung_profile"/>
+        <field name="email_form">${object.tujuan_id.email_formatted |safe}</field>
+        <field name="email_to">${object.email}</field>
+        <field name="subject">Kartu Pengunjung (ref ${object.noVisit})</field>
+        <field name="body html" type="html">
+            <div style="margin: 0px; padding: 0px;">
+                <p style="margin: 0px; padding: 0px; font-size: 13px;">
+                    Dear ${object.nama}
+                    <br /><br />
+                    kartu pengunjung anda silahkan ambil disecurity
+                    <br /><br />
+                    Jika Punya Pertanyaan Silahkan Bertanya
+                </p>
+            </div>
+        </field>
+        <field name="report_template" ref="report_pengunjung_kartu"/>
+        <field name="report_name">Kartu Pengunjung_${(object.noVisit)}</field>
+       </record>
+    
+                        
+    
+    </data>
+    
+
+</odoo>

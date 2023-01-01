@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="ruangan_profile_view_tree" model="ir.ui.view">
+        <field name="name">ruangan.profile.view.tree</field>
+        <field name="model">ruangan.profile</field>
+        <field name="arch" type="xml">
+            <tree string="">
+                <field name="ruangan"/>
+                <field name="lantai" />
+            </tree>
+        </field>
+    </record>
+
+    <record id="ruangan_profile_view_form" model="ir.ui.view">
+        <field name="name">ruangan_profile.view.form</field>
+        <field name="model">ruangan.profile</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <group>
+                        <field name="ruangan"/>
+                        <field name="lantai" />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="ruangan_profile_action" model="ir.actions.act_window">
+        <field name="name">Ruangan Profile</field>
+        <field name="res_model">ruangan.profile</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem
+        id="ruangan_profile_menu"
+        name="Ruangan"
+        action="ruangan_profile_action"
+        parent="pengunjung_root_menu"
+        sequence="15"/>
+</odoo>

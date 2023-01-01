@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="qr_code_name" model="ir.ui.view">
+       <field name="name">pengunjung.profile.qr.code</field>
+        <field name="model">pengunjung.profile</field>
+        <field name="type">form</field>
+        <field name="inherit_id" ref="latihan_custom_Module.pengunjung_form_view"/>
+        <field name="arch" type="xml">
+            <field name="foto_ktp" position="after">
+                <field name="qr_code" widget='image' class="oe_avatar"/>
+            </field>
+        </field>
+    </record>
+</odoo>

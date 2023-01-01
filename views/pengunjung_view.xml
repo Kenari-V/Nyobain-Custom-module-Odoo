@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="pengunjung_list_view" model="ir.ui.view">
+       <field name="name">pengunjung.list.view</field>
+       <field name="model">pengunjung.profile</field>
+       <field name="arch" type="xml">
+           <tree>
+               <field name="noVisit"/>
+               <field name="nama"/>
+               <field name="email"/>
+               <field name="phone"/>
+               <field name="tanggaldatang"/>
+               <field name="tujuan_id"/>
+               <field name="keperluan"/>
+               <field name="durasi"/> 
+               <field name="ruangan_id"/> 
+               <field name="keterangan"/>
+               <field name="state" />
+           </tree>
+       </field>
+       </record>
+
+       <record id="pengunjung_form_view" model="ir.ui.view">
+           <field name="name">pengunjung.form.view</field>
+           <field name="model">pengunjung.profile</field>
+           <field name="arch" type="xml">
+            <xpath>
+               <button name="print_qrcode" type="object" String="Print QR Code" class="oe_hightlight"/>
+            </xpath>
+               <form>
+               <header>
+                  <button id="action_confirm" name="action_confirm" string="Konfirmasi" class="btn-primary"
+                          type="object"/>
+                  <button id="action_progress" name="action_progress" string="Progress" class="btn-primary"
+                          type="object"/>
+                  <button id="action_selesai" name="action_selesai" string="Selesai" class="btn-primary"
+                          type="object"/>
+                  <button id="action_cancel" name="action_cancel" string="Cancel" class="btn-primary"
+                          type="object"/>
+                  <field name="state" widget="statusbar" />
+               </header>
+               <h1><field name="noVisit" nolabel="1" readonly = "1"/></h1>
+                  <group>
+                      <group>
+                         <field name="nama" required = "1"/>
+                         <field name="email" required = "1"/>
+                         <field name="phone" required = "1"/>
+                      </group>
+                      <group>
+                         <field name="tanggaldatang" required = "1"/>
+                      </group>
+                      <group>
+                         <field name="tujuan_id" required = "1"/>
+                         <field name="keperluan" required = "1"/>
+                          <field name="durasi" required = "1"/> 
+                          <field name="ruangan_id" required = "1" /> 
+                          <field name="keterangan" required = "1" />
+                          <field name="foto_Ktp" widget="image"/>
+                      </group>
+                  </group>
+               </form>
+           </field>
+       </record>
+
+       <record id="action_pengunjung_profile" model="ir.actions.act_window">
+           <field name="name">Pengunjung Profile</field>
+           <field name="res_model">pengunjung.profile</field>
+           <field name="view_mode">tree,form</field>
+       </record>
+
+       <menuitem id="pengunjung_root_menu" name="Buku Tamu"/>
+       <menuitem id="pengunjung_profile_menu" action="action_pengunjung_profile" parent="pengunjung_root_menu" name = "Daftar Tamu"/>
+</odoo>
+
+

@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+pengunjung_user,Base user,model_pengunjung_profile,base.group_user,1,1,1,1
+karyawan_user,Base user,model_karyawan_profile,base.group_user,1,1,1,1
+ruangan_user,Base user,model_ruangan_profile,base.group_user,1,1,1,1
